@@ -1,0 +1,6 @@
+# checkpoints folder of Jupyter Notebooks
+.ipynb_checkpoints
+# pre-trained Vicuna 7B v1.5
+Model_pretrained
+# models fine-tuned
+Fine-Tuned_models

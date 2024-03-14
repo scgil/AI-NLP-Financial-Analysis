@@ -1,0 +1,4 @@
+,current_ratio,quick_ratio,cash_ratio
+zero_shot,0.83024,0.842728,0.831505
+few_shot,0.897725,0.928372,0.909384
+fine_tuned,0.896326,0.898498,0.893478

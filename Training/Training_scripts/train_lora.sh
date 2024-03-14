@@ -1,0 +1,25 @@
+deepspeed --include localhost:0 ./train_lora.py \
+  --model_name_or_path ../Model_pretrained/vicuna-7b-v1.5 \
+  --lora_r 128 \
+  --lora_alpha 256 \
+  --lora_dropout 0.05 \
+  --data_path ../Train_samples/train_set_Cash_5.json \
+  --bf16 True \
+  --output_dir $PWD/../Trainings/cash_ratio_k5 \
+  --num_train_epochs 10 \
+  --per_device_train_batch_size 4 \
+  --per_device_eval_batch_size 4 \
+  --gradient_accumulation_steps 1 \
+  --evaluation_strategy "no" \
+  --save_strategy "steps" \
+  --save_steps 1200 \
+  --save_total_limit 100 \
+  --learning_rate 2e-5 \
+  --weight_decay 0. \
+  --warmup_ratio 0.03 \
+  --lr_scheduler_type "constant" \
+  --logging_steps 1 \
+  --tf32 True \
+  --model_max_length 512 \
+  --deepspeed ./deepspeed-config.json \
+  --report_to none
